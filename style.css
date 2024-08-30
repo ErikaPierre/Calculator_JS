@@ -1,0 +1,103 @@
+:root {
+  --background: #22252d;
+  --secondBackground: #292d36;
+  --thirdBackground: #4e5055;
+  --numberColor: #fff;
+  --displayColor: white;
+  --operatorColor: #eb6666;
+  --actionColor: rgb(0, 157, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background-color: var(--background);
+  color: var(--numberColor);
+  width: 100%;
+  max-width: 375px;
+  min-height: 646px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.display {
+  min-height: 100px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: var(--displayColor);
+  text-align: right;
+  flex: 1 1 0%;
+}
+
+.display .input {
+  font-size: 1.25rem;
+  margin-bottom: 0.23rem;
+}
+
+.display .output {
+  width: 100%;
+  max-width: 100%;
+  font-size: 3rem;
+  font-weight: 700;
+  overflow: auto;
+}
+
+.operator {
+  color: var(--operatorColor);
+}
+
+.action {
+  color: var(--actionColor);
+}
+
+.keys {
+  background-color: var(--secondBackground);
+  border-radius: 1.25rem 1.25rem 0 0;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  height: 0;
+  padding-top: 100%;
+  background-color: var(--thirdBackground);
+  border-radius: 1.25rem;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.keys .key:hover {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
